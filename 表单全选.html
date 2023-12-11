@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" id = "selected"></th>
+                <th>Item</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id = "unselected">
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>IPhone8</th>
+                <th>8888</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>IPad Pro</th>
+                <th>5000</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>IPad Air</th>
+                <th>2000</th>
+            </tr>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>Apple Watch</th>
+                <th>2000</th>
+            </tr>
+
+        </tbody>
+        
+
+        <script>
+            var all = document.getElementById('selected');
+            var tbs = document.getElementById('unselected').getElementsByTagName('input');
+            all.onclick = function() {
+                for(var i = 0; i < tbs.length; i++) {
+                    tbs[i].checked = this.checked;
+                }
+            }
+
+            var flag = true;
+            for(var j = 0; j < tbs.length; j++) {
+                tbs[j].onclick = function() {
+                    flag = true;
+                    for(var n = 0; n < tbs.length; n++) {
+                        if(!tbs[n].checked) {
+                            flag = false;
+                        }
+                    }
+                    all.checked = flag;
+                }
+            }
+
+        </script>
+    </table>
+</body>
+</html>
