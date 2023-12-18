@@ -42,8 +42,21 @@
             <div class = "item">售后服务模块内容</div>
             <div class = "item">商品价格模块内容</div>
             <div class = "item">手机社区模块内容</div>
-
         </div>
     </div>
+    <script>
+        var tab_list = document.querySelector('.tab_list');
+        var li = tab_list.querySelectorAll('li');
+
+        for(var i = 0; i < li.length; i++) {
+            li[i].onclick = function() {
+                for(var j = 0; j < li.length; j++) {
+                    li[i].className = '';
+                }
+            }
+            this.className = 'current'
+        }
+
+    </script>
 </body>
 </html>
