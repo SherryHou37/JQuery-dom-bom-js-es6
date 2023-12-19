@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>subject</th>
+                <th>grade</th>
+                <th>operation</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var dates = {
+            name: 'Sherry',
+            subject: 'JavaScript',
+            grade: '100'
+
+        }
+
+        var dates = [{
+            name: 'Sherry',
+            subject: 'JavaScript',
+            grade: '100'
+        }, {
+            name: 'Sherry1',
+            subject: 'JavaScript',
+            grade: '98'
+        }, {
+            name: 'Sherry3',
+            subject: 'JavaScript',
+            grade: '99'
+        }, {
+            name: 'Sherry4',
+            subject: 'JavaScript',
+            grade: '88'
+        }]
+
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < dates.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+
+            for(var k in dates[i]) {
+                var td = document.createElementNS('td');
+                tr.appendChild(td)
+            }
+        }
+    </script>
+</body>
+</html>
