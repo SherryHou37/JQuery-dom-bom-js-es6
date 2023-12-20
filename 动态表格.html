@@ -49,8 +49,10 @@
             tbody.appendChild(tr);
 
             for(var k in dates[i]) {
-                var td = document.createElementNS('td');
-                tr.appendChild(td)
+                var td = document.createElement('td');
+
+                td.innerHTML = dates[i][k];
+                tr.appendChild(td);
             }
         }
     </script>
